@@ -1,101 +1,78 @@
-AI WhatsApp Companion (Flask + Groq)
+# 🤖 AI WhatsApp Companion
+**Flask + Groq + Twilio**
 
-An emotionally intelligent AI companion that lives on WhatsApp.
-Built with Python, Flask, Twilio WhatsApp, Groq LLM, and persistent memory.
+An emotionally intelligent AI companion that lives on **WhatsApp**.  
+Built with **Python**, **Flask**, **Twilio WhatsApp**, **Groq LLM**, and **persistent memory**.
 
-The bot can:
-Hold natural conversations
-Remember past interactions
-Respond with a consistent personality
-Be safely tuned for emotional intelligence
+---
 
-✨ Features
-💬 Real-time WhatsApp conversations via Twilio
-🧠 Persistent memory (remembers previous chats)
-🎭 Personality-driven responses
-🤖 Groq-powered LLM replies
-🛡️ Safe emotional tuning
-🌐 Webhook-based architecture
-☁️ Cloud-deployable (production ready)
+## 🌟 Overview
 
-WhatsApp User
-     │
-     ▼
+This project enables a conversational AI that can:
+- Hold natural, human-like conversations
+- Remember past interactions
+- Maintain a consistent personality
+- Respond with emotionally intelligent and safe replies
+
+The AI communicates entirely through **WhatsApp**, making interactions feel personal and engaging.
+
+---
+
+## ✨ Features
+
+- 💬 Real-time WhatsApp conversations via Twilio  
+- 🧠 Persistent memory (remembers previous chats)  
+- 🎭 Personality-driven responses  
+- ⚡ Groq-powered LLM replies  
+- 🛡️ Safe emotional tuning  
+- 🌐 Webhook-based architecture  
+- ☁️ Cloud-deployable & production-ready  
+
+---
+
+## 🧠 Architecture
+
+```
+WhatsApp
+   ↓
 Twilio WhatsApp Webhook
-     │
-     ▼
-Flask Application (/whatsapp)
-     │
-     ▼
+   ↓
+Flask App (Python)
+   ↓
 MessageController
-     │
-     ├── MemoryManager (persistent context)
-     ├── Personality Traits
-     └── Groq AI Client
-     │
-     ▼
-AI-generated response
-     │
-     ▼
-Twilio → WhatsApp User
+   ↓
+AIEngine (Groq)
+   ↓
+MemoryManager
+   ↓
+Response → WhatsApp
+```
 
+## ☁️ Deployment
 
-ai_companion/
-├── app.py                     # Flask entry point
-├── config.py                  # App configuration
-├── .env                       # Environment variables
-├── requirements.txt           # Dependencies
-├── README.md                  # Project documentation
-│
-├── ai/
-│   ├── groq_client.py         # Groq AI integration
-│   └── personality.py         # AI personality traits
-│
-├── controllers/
-│   └── message_controller.py  # Orchestrates message flow
-│
-├── memory/
-│   └── memory_manager.py      # Persistent conversation memory
-│
-├── messaging/
-│   └── whatsapp_handler.py    # Twilio webhook handler
-│
-└── data/
-    └── conversation_memory.json  # Stored chat history
+This project can be deployed on:
+- Railway
+- Fly.io
+- Render
+- Heroku
 
-Configuration
+After Deployment:
+- Update the Twilio WhatsApp Webhook URL
+- Use a permanent HTTPS endpoint
+- Remove local tunneling (ngrok)
 
-GROQ_API_KEY=your_groq_api_key
-TWILIO_ACCOUNT_SID=your_sid
-TWILIO_AUTH_TOKEN=your_token
-TWILIO_WHATSAPP_NUMBER=whatsapp:+
+## 🔮 Future Improvements
 
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python app.py
+- Memory summarization (short-term vs long-term)
+- Scheduled messages (good morning, reminders)
+- Multi-user support
+- Emotion detection
+- Voice message handling
 
-Deployment
+## 🧩 Tech Stack
 
-This project can be deployed to:
-Railway
-Fly.io
-Render
-Heroku
-
-Once deployed:
-Update Twilio webhook URL
-Use a permanent HTTPS endpoint
-Remove local tunneling
-
-Future Improvements
-
-Memory summarization (long-term vs short-term)
-Scheduled messages (good morning / reminders)
-Multi-user support
-Emotion detection
-Voice message handling
-
-
-
-
+- Python
+- Flask
+- Twilio WhatsApp API
+- Groq LLM
+- JSON-based persistent memory
